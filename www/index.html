@@ -15,7 +15,13 @@ var ncmb = new NCMB(appKey, cliKey);
 var TestClass = ncmb.DataStore("RegisterTest2");
 var testRecord = new TestClass();
 testRecord.set("message2", "ok, world");
-testRecord.save();
+testRecord.save()
+.then(function(m){
+alert("success:" + JSON.stringify(m));
+})
+.catch(function(m){
+alert("fail:" + JSON.stringify(m));
+});
 
     </script>
 </head>
